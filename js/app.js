@@ -35,6 +35,8 @@ const displayError = () => {
 }
 // display boook
 const displayBookResult =(books) =>{
+
+  console.log(books.numFound);
   // hide spinner
   // document.getElementById('spinner').style.display = 'none';
 // console.log(books);
@@ -48,7 +50,7 @@ if(bookList == null){
 }
 
 else{
-  document.getElementById('total-book').innerText=`Book-found ${bookList.length}`
+  document.getElementById('total-book').innerText=`Book-found ${bookList.length}  out of ${books.numFound}`
   document.getElementById('spinner').style.display = 'none';
   document.getElementById('error-message').style.display = 'none';
   // display each book in a card
