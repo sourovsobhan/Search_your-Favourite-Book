@@ -46,8 +46,16 @@ const bookList = books.docs;
 
 if(bookList == null){
   displayError();
+}
+else if(!bookList.length > 0){
+
+  document.getElementById('total-book').innerText=`no result found`;
+  document.getElementById('spinner').style.display = 'none';
+ document.getElementById('error-message').style.display = 'none';
 
 }
+  
+
 
 else{
   document.getElementById('total-book').innerText=`Book-found ${bookList.length}  out of ${books.numFound}`
