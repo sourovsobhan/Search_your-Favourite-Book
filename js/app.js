@@ -31,6 +31,7 @@ const displayError = () => {
   document.getElementById('error-message').style.display = 'block';
   document.getElementById('spinner').style.display = 'none';
   document.getElementById('book-container').textContent = '';
+  document.getElementById('total-book').innerText="";
 }
 // display boook
 const displayBookResult =(books) =>{
@@ -40,11 +41,12 @@ const displayBookResult =(books) =>{
 const bookContainer = document.getElementById('book-container');
 bookContainer.textContent ="";
 const bookList = books.docs;
-if(!bookList.length > 0){
-  document.getElementById('total-book').innerText=`no result found`
-document.getElementById('spinner').style.display = 'none';
-document.getElementById('error-message').style.display = 'none';
+
+if(bookList == null){
+  displayError();
+
 }
+
 else{
   document.getElementById('total-book').innerText=`Book-found ${bookList.length}`
   document.getElementById('spinner').style.display = 'none';
